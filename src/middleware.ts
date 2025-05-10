@@ -17,7 +17,7 @@ export default clerkMiddleware(async (auth, req) => {
 			req.nextUrl.pathname === "/sign-in" ||
 			req.nextUrl.pathname === "/sign-up"
 		) {
-			return Response.redirect(new URL("/protected", req.url));
+			return Response.redirect(new URL("/tracks", req.url));
 		}
 	}
 });

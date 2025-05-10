@@ -30,6 +30,7 @@ export default function DashboardLayout({
 	const [productType, setProductType] = useState<string>("murabaha");
 	const [isMobile, setIsMobile] = useState(false);
 	const [showMobileDock, setShowMobileDock] = useState(false);
+	const pathnameRoot = pathname.split("/")[1];
 
 	// Extract product type from URL
 	useEffect(() => {
@@ -75,27 +76,27 @@ export default function DashboardLayout({
 				<SidebarLogo />
 				<div className="flex flex-col items-center gap-6 mt-8 flex-1">
 					<SidebarLink
-						href={`/${productType}`}
+						href={`/${pathnameRoot}`}
 						icon={<LayoutGrid size={24} />}
-						active={pathname === `/dashboard/${productType}`}
+						active={pathname === `/${productType}`}
 					/>
 					<SidebarLink
-						href={`/${productType}/contracts`}
+						href={`/${pathnameRoot}/contracts`}
 						icon={<FileText size={24} />}
 						active={pathname.includes("/contracts")}
 					/>
 					<SidebarLink
-						href={`/${productType}/products`}
+						href={`/${pathnameRoot}/products`}
 						icon={<Package size={24} />}
 						active={pathname.includes("/products")}
 					/>
 					<SidebarLink
-						href={`/${productType}/users`}
+						href={`/${pathnameRoot}/users`}
 						icon={<Users size={24} />}
 						active={pathname.includes("/users")}
 					/>
 					<SidebarLink
-						href={`/${productType}/settings`}
+						href={`/${pathnameRoot}/settings`}
 						icon={<Settings size={24} />}
 						active={pathname.includes("/settings")}
 					/>

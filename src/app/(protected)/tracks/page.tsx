@@ -42,28 +42,9 @@ export default function HomePage() {
 								Logo
 							</h1>
 						</div>
-						<nav className="hidden md:flex space-x-8">
-							{["Home", "Product", "Solutions", "Resources", "Contact"].map(
-								(item) => (
-									<Link
-										key={item}
-										href="#"
-										className="text-muted-foreground hover:text-amber-400 transition-colors duration-200"
-									>
-										{item}
-									</Link>
-								)
-							)}
-						</nav>
 					</div>
 					<div className="flex items-center gap-4">
 						<ThemeToggle />
-						<Link
-							href="#"
-							className="bg-amber-200 hover:bg-amber-300 text-gray-800 px-6 py-2 rounded-full font-medium transition-all duration-300 ease-in-out transform hover:scale-105 dark:bg-amber-300 dark:hover:bg-amber-400"
-						>
-							Get Started
-						</Link>
 					</div>
 				</div>
 			</header>
@@ -82,16 +63,10 @@ export default function HomePage() {
 					Create Islamic financial products in minutes, not months. Our
 					AI-powered platform guides you through every step of the process.
 				</p>
-				<Link
-					href="#products"
-					className="inline-block bg-amber-400 hover:bg-amber-500 text-gray-800 px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105"
-				>
-					Explore Products
-				</Link>
 			</section>
 
 			{/* Products Diagram Section */}
-			<section id="products" className="container mx-auto px-4 py-16">
+			<section id="products" className="container mx-auto px-4 pb-16">
 				<h2 className="text-3xl font-bold text-center mb-12 text-foreground">
 					Our Financial Products
 				</h2>
