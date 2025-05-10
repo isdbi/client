@@ -17,9 +17,11 @@ import {
 	AlertTriangle,
 	CheckCircle,
 	XCircle,
+	Ruler,
 } from "lucide-react";
 import { Dock, DockIcon } from "@/components/magicui/dock";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
+import { SignedIn, UserButton } from "@clerk/nextjs";
 
 export default function DashboardLayout({
 	children,
@@ -81,11 +83,17 @@ export default function DashboardLayout({
 						active={pathname === `/${productType}`}
 					/>
 					<SidebarLink
+						href={`/${pathnameRoot}/compliance-review`}
+						icon={<Ruler size={24} />}
+						active={pathname.includes("/compliance-review")}
+					/>
+					<SidebarLink
 						href={`/${pathnameRoot}/contracts`}
 						icon={<FileText size={24} />}
 						active={pathname.includes("/contracts")}
 					/>
-					<SidebarLink
+
+					{/* <SidebarLink
 						href={`/${pathnameRoot}/products`}
 						icon={<Package size={24} />}
 						active={pathname.includes("/products")}
@@ -95,6 +103,11 @@ export default function DashboardLayout({
 						icon={<Users size={24} />}
 						active={pathname.includes("/users")}
 					/>
+					<SidebarLink
+						href={`/${pathnameRoot}/issuances`}
+						icon={<LucideRectangleGoggles size={24} />}
+						active={pathname.includes("/issuances")}
+					/> */}
 					<SidebarLink
 						href={`/${pathnameRoot}/settings`}
 						icon={<Settings size={24} />}
@@ -140,7 +153,9 @@ export default function DashboardLayout({
 						<div className="hidden md:block">
 							<ThemeToggle />
 						</div>
-						<div className="w-8 h-8 rounded-full bg-amber-400"></div>
+						<SignedIn>
+							<UserButton />
+						</SignedIn>
 					</div>
 				</header>
 
