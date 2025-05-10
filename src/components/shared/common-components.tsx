@@ -15,36 +15,21 @@ export function TabButton({
 		<button
 			onClick={onClick}
 			className={`py-3 px-6 font-medium text-sm whitespace-nowrap relative ${
-				active
-					? "text-amber-500"
-					: "text-muted-foreground hover:text-foreground"
+				active ? "text-amber-500" : "text-muted-foreground hover:text-foreground"
 			}`}
 		>
 			{children}
 			{active && (
-				<motion.div
-					layoutId="activeTab"
-					className="absolute bottom-0 left-0 right-0 h-0.5 bg-amber-400"
-				/>
+				<motion.div layoutId="activeTab" className="absolute bottom-0 left-0 right-0 h-0.5 bg-amber-400" />
 			)}
 		</button>
 	);
 }
 
-export function StatCard({
-	title,
-	value,
-	icon,
-}: {
-	title: string;
-	value: string | number;
-	icon: React.ReactNode;
-}) {
+export function StatCard({ title, value, icon }: { title: string; value: string | number; icon: React.ReactNode }) {
 	return (
 		<div className="flex items-center gap-4">
-			<div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center">
-				{icon}
-			</div>
+			<div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center">{icon}</div>
 			<div>
 				<p className="text-muted-foreground text-sm">{title}</p>
 				<p className="text-foreground text-2xl font-bold">{value}</p>
@@ -55,25 +40,9 @@ export function StatCard({
 
 export function ChartIcon() {
 	return (
-		<svg
-			width="24"
-			height="24"
-			viewBox="0 0 24 24"
-			fill="none"
-			xmlns="http://www.w3.org/2000/svg"
-		>
-			<path
-				d="M8 10L12 14L16 10"
-				stroke="currentColor"
-				strokeWidth="2"
-				className="text-amber-500"
-			/>
-			<path
-				d="M8 17L12 21L16 17"
-				stroke="currentColor"
-				strokeWidth="2"
-				className="text-amber-500 opacity-30"
-			/>
+		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M8 10L12 14L16 10" stroke="currentColor" strokeWidth="2" className="text-amber-500" />
+			<path d="M8 17L12 21L16 17" stroke="currentColor" strokeWidth="2" className="text-amber-500 opacity-30" />
 		</svg>
 	);
 }
@@ -152,9 +121,7 @@ export function ContractItem({ type = "murabaha", expanded = false }) {
 	return (
 		<div
 			className={`flex items-center gap-4 ${
-				expanded
-					? "p-4 border border-border rounded-lg hover:bg-muted/30 transition-colors"
-					: ""
+				expanded ? "p-4 border border-border rounded-lg hover:bg-muted/30 transition-colors" : ""
 			}`}
 		>
 			<div className="w-8 h-8 bg-amber-100 dark:bg-amber-900/20 rounded-full flex items-center justify-center">
@@ -193,11 +160,7 @@ export function ComplianceItem({
 	return (
 		<div className="flex justify-between items-center">
 			<span className="text-muted-foreground">{label}</span>
-			<span
-				className={`text-xs py-1 px-3 rounded-full ${statusColors[status]}`}
-			>
-				{statusText[status]}
-			</span>
+			<span className={`text-xs py-1 px-3 rounded-full ${statusColors[status]}`}>{statusText[status]}</span>
 		</div>
 	);
 }

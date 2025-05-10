@@ -2,16 +2,11 @@ import axios from "axios";
 import { cookies } from "next/headers";
 import getEnv from "./env";
 
-export const BASE_URL =
-	getEnv.ENV === "development" ? getEnv.LOCAL_API_URL : getEnv.HOSTED_API_URL;
+export const BASE_URL = getEnv.ENV === "development" ? getEnv.LOCAL_API_URL : getEnv.HOSTED_API_URL;
 
 const cookieStore = await cookies();
 
-export const CustomAxios = async (
-	path: string,
-	method: "GET" | "POST" | "PUT" | "DELETE",
-	data?: any
-) => {
+export const CustomAxios = async (path: string, method: "GET" | "POST" | "PUT" | "DELETE", data?: any) => {
 	const token = cookieStore.get("auth_token");
 
 	console.log("path");

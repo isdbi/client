@@ -22,10 +22,7 @@ export default function MurabahaContractsPage() {
 							onChange={(e) => setSearchTerm(e.target.value)}
 							className="w-full pl-10 pr-4 py-2 border border-border rounded-lg bg-background focus:outline-none focus:ring-2 focus:ring-amber-200"
 						/>
-						<Search
-							className="absolute left-3 top-2.5 text-muted-foreground"
-							size={18}
-						/>
+						<Search className="absolute left-3 top-2.5 text-muted-foreground" size={18} />
 					</div>
 
 					<button className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg hover:bg-muted transition-colors">

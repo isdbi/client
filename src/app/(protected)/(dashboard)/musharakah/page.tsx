@@ -3,13 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import {
-	ChartIcon,
-	ContractItem,
-	TabButton,
-	StatCard,
-	WorkloadChart,
-} from "@/components/shared/common-components";
+import { ChartIcon, ContractItem, TabButton, StatCard, WorkloadChart } from "@/components/shared/common-components";
 
 export default function MusharakahOverviewPage() {
 	const [activeTab, setActiveTab] = useState("overview");
@@ -17,30 +11,18 @@ export default function MusharakahOverviewPage() {
 	return (
 		<div className="flex flex-col">
 			{/* Tabs */}
-			<div className="bg-card px-4 sm:px-8 border-b border-border">
+			<div className="px-4 sm:px-8 border-b border-border">
 				<div className="flex overflow-x-auto">
-					<TabButton
-						active={activeTab === "overview"}
-						onClick={() => setActiveTab("overview")}
-					>
+					<TabButton active={activeTab === "overview"} onClick={() => setActiveTab("overview")}>
 						Overview
 					</TabButton>
-					<TabButton
-						active={activeTab === "mytasks"}
-						onClick={() => setActiveTab("mytasks")}
-					>
+					<TabButton active={activeTab === "mytasks"} onClick={() => setActiveTab("mytasks")}>
 						MyTasks
 					</TabButton>
-					<TabButton
-						active={activeTab === "analytics"}
-						onClick={() => setActiveTab("analytics")}
-					>
+					<TabButton active={activeTab === "analytics"} onClick={() => setActiveTab("analytics")}>
 						Analytics
 					</TabButton>
-					<TabButton
-						active={activeTab === "partners"}
-						onClick={() => setActiveTab("partners")}
-					>
+					<TabButton active={activeTab === "partners"} onClick={() => setActiveTab("partners")}>
 						Partners
 					</TabButton>
 				</div>
@@ -64,11 +46,7 @@ export default function MusharakahOverviewPage() {
 									transition={{ delay: 0.1 }}
 									className="bg-card rounded-xl shadow-sm p-4 sm:p-6"
 								>
-									<StatCard
-										title="Active Partnerships"
-										value="14"
-										icon={<ChartIcon />}
-									/>
+									<StatCard title="Active Partnerships" value="14" icon={<ChartIcon />} />
 								</motion.div>
 
 								<motion.div
@@ -77,11 +55,7 @@ export default function MusharakahOverviewPage() {
 									transition={{ delay: 0.2 }}
 									className="bg-card rounded-xl shadow-sm p-4 sm:p-6"
 								>
-									<StatCard
-										title="Profit Distribution"
-										value="$1.2M"
-										icon={<ChartIcon />}
-									/>
+									<StatCard title="Profit Distribution" value="$1.2M" icon={<ChartIcon />} />
 								</motion.div>
 
 								<motion.div
@@ -90,11 +64,7 @@ export default function MusharakahOverviewPage() {
 									transition={{ delay: 0.3 }}
 									className="bg-card rounded-xl shadow-sm p-4 sm:p-6"
 								>
-									<StatCard
-										title="New Proposals"
-										value="8"
-										icon={<ChartIcon />}
-									/>
+									<StatCard title="New Proposals" value="8" icon={<ChartIcon />} />
 								</motion.div>
 
 								<motion.div
@@ -103,11 +73,7 @@ export default function MusharakahOverviewPage() {
 									transition={{ delay: 0.4 }}
 									className="bg-card rounded-xl shadow-sm p-4 sm:p-6"
 								>
-									<StatCard
-										title="Risk Assessment"
-										value="Medium"
-										icon={<ChartIcon />}
-									/>
+									<StatCard title="Risk Assessment" value="Medium" icon={<ChartIcon />} />
 								</motion.div>
 							</div>
 
@@ -123,9 +89,7 @@ export default function MusharakahOverviewPage() {
 									<h2 className="text-xl sm:text-2xl font-bold text-foreground mb-1">
 										Profit & Loss Distribution
 									</h2>
-									<p className="text-muted-foreground text-sm mb-6">
-										By partnership type
-									</p>
+									<p className="text-muted-foreground text-sm mb-6">By partnership type</p>
 
 									<div className="h-64 relative">
 										<WorkloadChart />
@@ -170,9 +134,7 @@ export default function MusharakahOverviewPage() {
 									<h2 className="text-xl sm:text-2xl font-bold text-foreground mb-1">
 										Recent Partnerships
 									</h2>
-									<p className="text-muted-foreground text-sm mb-6">
-										Latest partnership agreements
-									</p>
+									<p className="text-muted-foreground text-sm mb-6">Latest partnership agreements</p>
 
 									<div className="space-y-4">
 										{[1, 2, 3, 4, 5].map((item) => (
@@ -208,9 +170,7 @@ export default function MusharakahOverviewPage() {
 										: "Partners"}{" "}
 									View
 								</h2>
-								<p className="text-muted-foreground">
-									This tab content is not implemented in the demo
-								</p>
+								<p className="text-muted-foreground">This tab content is not implemented in the demo</p>
 							</div>
 						</motion.div>
 					)}

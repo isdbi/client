@@ -41,18 +41,12 @@ export default function MurabahaSettingsPage() {
 				{/* Content */}
 				<div className="flex-1 bg-card rounded-xl shadow-sm p-4 sm:p-6">
 					{activeTab === "general" && (
-						<motion.div
-							initial={{ opacity: 0 }}
-							animate={{ opacity: 1 }}
-							className="space-y-6"
-						>
+						<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6">
 							<h2 className="text-xl font-semibold mb-4">General Settings</h2>
 
 							<div className="space-y-4">
 								<div>
-									<label className="block text-sm font-medium mb-1">
-										Product Name
-									</label>
+									<label className="block text-sm font-medium mb-1">Product Name</label>
 									<input
 										type="text"
 										defaultValue="Murabaha Financing"
@@ -61,9 +55,7 @@ export default function MurabahaSettingsPage() {
 								</div>
 
 								<div>
-									<label className="block text-sm font-medium mb-1">
-										Default Profit Rate (%)
-									</label>
+									<label className="block text-sm font-medium mb-1">Default Profit Rate (%)</label>
 									<input
 										type="number"
 										defaultValue="5.5"
@@ -83,9 +75,7 @@ export default function MurabahaSettingsPage() {
 								</div>
 
 								<div>
-									<label className="block text-sm font-medium mb-1">
-										Description
-									</label>
+									<label className="block text-sm font-medium mb-1">Description</label>
 									<textarea
 										defaultValue="Murabaha is a cost-plus financing structure where the bank purchases an asset and sells it to the customer at a marked-up price."
 										rows={4}

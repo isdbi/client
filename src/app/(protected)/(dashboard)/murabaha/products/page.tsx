@@ -1,15 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-	Search,
-	Filter,
-	Plus,
-	Home,
-	Car,
-	Building,
-	ShoppingBag,
-} from "lucide-react";
+import { Search, Filter, Plus, Home, Car, Building, ShoppingBag } from "lucide-react";
 
 export default function MurabahaProductsPage() {
 	return (
@@ -24,10 +16,7 @@ export default function MurabahaProductsPage() {
 							placeholder="Search products..."
 							className="w-full pl-10 pr-4 py-2 border border-border rounded-lg bg-background focus:outline-none focus:ring-2 focus:ring-amber-200"
 						/>
-						<Search
-							className="absolute left-3 top-2.5 text-muted-foreground"
-							size={18}
-						/>
+						<Search className="absolute left-3 top-2.5 text-muted-foreground" size={18} />
 					</div>
 
 					<button className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg hover:bg-muted transition-colors">
@@ -72,9 +61,7 @@ export default function MurabahaProductsPage() {
 							Murabaha financing for {product.name.toLowerCase()}
 						</p>
 						<div className="flex justify-between items-center">
-							<span className="text-sm text-muted-foreground">
-								{product.count} active contracts
-							</span>
+							<span className="text-sm text-muted-foreground">{product.count} active contracts</span>
 							<span className="text-xs px-2 py-1 bg-green-100 text-green-700 rounded-full dark:bg-green-900/20">
 								Active
 							</span>

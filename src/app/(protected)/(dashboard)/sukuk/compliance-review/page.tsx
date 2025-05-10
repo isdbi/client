@@ -3,10 +3,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Pen } from "lucide-react";
-import {
-	ComplianceItem,
-	TabButton,
-} from "@/components/shared/common-components";
+import { ComplianceItem, TabButton } from "@/components/shared/common-components";
 
 export default function MurabahaComplianceReviewPage() {
 	const [activeTab, setActiveTab] = useState("contract-text");
@@ -18,22 +15,16 @@ export default function MurabahaComplianceReviewPage() {
 				<motion.div
 					initial={{ opacity: 0, y: 10 }}
 					animate={{ opacity: 1, y: 0 }}
-					className="lg:col-span-7 bg-card rounded-xl shadow-sm p-4 sm:p-6"
+					className="lg:col-span-7 bg-card rounded-xl border p-4 sm:p-6"
 				>
-					<h2 className="text-xl sm:text-2xl font-bold text-foreground mb-1">
-						Contract Review
-					</h2>
+					<h2 className="text-xl sm:text-2xl font-bold text-foreground mb-1">Contract Review</h2>
 					<p className="text-muted-foreground text-sm mb-6">
-						Review product structure and contractual terms for Islamic
-						compliance
+						Review product structure and contractual terms for Islamic compliance
 					</p>
 
 					{/* Tabs */}
-					<div className="flex border-b border-border overflow-x-auto">
-						<TabButton
-							active={activeTab === "contract-text"}
-							onClick={() => setActiveTab("contract-text")}
-						>
+					<div className="flex overflow-x-auto">
+						<TabButton active={activeTab === "contract-text"} onClick={() => setActiveTab("contract-text")}>
 							Contract text
 						</TabButton>
 						<TabButton
@@ -55,16 +46,13 @@ export default function MurabahaComplianceReviewPage() {
 									exit={{ opacity: 0 }}
 									className="space-y-4"
 								>
-									<h3 className="text-blue-600 font-medium">
-										Murabaha Home Financing Agreement
-									</h3>
+									<h3 className="text-blue-600 font-medium">Murabaha Home Financing Agreement</h3>
 
 									<div className="mb-4">
 										<h4 className="font-medium mb-2">1. Parties</h4>
 										<p className="text-muted-foreground">
-											This Murabaha Home Financing Agreement (the Agreement) is
-											made between Dubai Islamic Bank (the Bank) and Mohammed Al
-											Farsi (the Customer).
+											This Murabaha Home Financing Agreement (the Agreement) is made between Dubai
+											Islamic Bank (the Bank) and Mohammed Al Farsi (the Customer).
 										</p>
 									</div>
 
@@ -78,42 +66,37 @@ export default function MurabahaComplianceReviewPage() {
 									<div className="mb-4">
 										<h4 className="font-medium mb-2">3. Purchase and Sale</h4>
 										<p className="text-muted-foreground">
-											The Bank agrees to purchase the Property from the seller
-											at the Purchase Price of AED 2,500,000 and subsequently
-											sell it to the Customer at the Sale Price of AED
-											3,125,000, which includes the Bank is profit of AED
-											625,000.
+											The Bank agrees to purchase the Property from the seller at the Purchase
+											Price of AED 2,500,000 and subsequently sell it to the Customer at the Sale
+											Price of AED 3,125,000, which includes the Bank is profit of AED 625,000.
 										</p>
 									</div>
 
 									<div className="mb-4">
 										<h4 className="font-medium mb-2">4. Payment Terms</h4>
 										<p className="text-muted-foreground">
-											The Customer agrees to pay the Sale Price in 120 monthly
-											installments of AED 26,041.67. Late payments will incur a
-											penalty fee of 2% per month on the overdue amount, which
-											will be donated to charity after deducting administrative
-											costs.
+											The Customer agrees to pay the Sale Price in 120 monthly installments of AED
+											26,041.67. Late payments will incur a penalty fee of 2% per month on the
+											overdue amount, which will be donated to charity after deducting
+											administrative costs.
 										</p>
 									</div>
 
 									<div className="mb-4">
 										<h4 className="font-medium mb-2">5. Ownership Transfer</h4>
 										<p className="text-muted-foreground">
-											Legal title to the Property shall be transferred to the
-											Customer upon execution of this Agreement, while the Bank
-											shall maintain a security interest until full payment of
-											the Sale Price.
+											Legal title to the Property shall be transferred to the Customer upon
+											execution of this Agreement, while the Bank shall maintain a security
+											interest until full payment of the Sale Price.
 										</p>
 									</div>
 
 									<div className="mb-4">
 										<h4 className="font-medium mb-2">6. Default</h4>
 										<p className="text-muted-foreground">
-											In the event of default by the Customer, the Bank shall be
-											entitled to accelerate all remaining payments and charge
-											interest at the prevailing market rate on the outstanding
-											amount.
+											In the event of default by the Customer, the Bank shall be entitled to
+											accelerate all remaining payments and charge interest at the prevailing
+											market rate on the outstanding amount.
 										</p>
 									</div>
 								</motion.div>
@@ -146,11 +129,9 @@ export default function MurabahaComplianceReviewPage() {
 					<motion.div
 						initial={{ opacity: 0, y: 10 }}
 						animate={{ opacity: 1, y: 0, transition: { delay: 0.1 } }}
-						className="bg-card rounded-xl shadow-sm p-4 sm:p-6"
+						className="bg-card rounded-xl border p-4 sm:p-6"
 					>
-						<h2 className="text-xl font-bold text-foreground mb-1">
-							Shariah Compliance Score
-						</h2>
+						<h2 className="text-xl font-bold text-foreground mb-1">Shariah Compliance Score</h2>
 						<p className="text-muted-foreground text-sm mb-6">
 							AI-generated assessment of contract compliance
 						</p>
@@ -172,14 +153,8 @@ export default function MurabahaComplianceReviewPage() {
 
 						<div className="space-y-4">
 							<ComplianceItem label="Structure Validity" status="compliant" />
-							<ComplianceItem
-								label="Profit Calculation"
-								status="needs-review"
-							/>
-							<ComplianceItem
-								label="Late Payment Terms"
-								status="non-compliant"
-							/>
+							<ComplianceItem label="Profit Calculation" status="needs-review" />
+							<ComplianceItem label="Late Payment Terms" status="non-compliant" />
 							<ComplianceItem label="Ownership Transfer" status="compliant" />
 							<ComplianceItem label="Default Clauses" status="needs-review" />
 						</div>
@@ -189,14 +164,10 @@ export default function MurabahaComplianceReviewPage() {
 					<motion.div
 						initial={{ opacity: 0, y: 10 }}
 						animate={{ opacity: 1, y: 0, transition: { delay: 0.2 } }}
-						className="bg-card rounded-xl shadow-sm p-4 sm:p-6"
+						className="bg-card rounded-xl border p-4 sm:p-6"
 					>
-						<h2 className="text-xl font-bold text-foreground mb-1">
-							AI Feedback
-						</h2>
-						<p className="text-muted-foreground text-sm mb-6">
-							Auto-flagged clauses and suggestions
-						</p>
+						<h2 className="text-xl font-bold text-foreground mb-1">AI Feedback</h2>
+						<p className="text-muted-foreground text-sm mb-6">Auto-flagged clauses and suggestions</p>
 
 						<div className="p-6 text-center text-muted-foreground italic">
 							Feedback will appear here based on AI analysis
@@ -207,7 +178,7 @@ export default function MurabahaComplianceReviewPage() {
 					<motion.div
 						initial={{ opacity: 0, y: 10 }}
 						animate={{ opacity: 1, y: 0, transition: { delay: 0.3 } }}
-						className="bg-card rounded-xl shadow-sm p-4 sm:p-6"
+						className="bg-card rounded-xl border p-4 sm:p-6"
 					>
 						<h2 className="text-xl font-bold text-foreground mb-6">Comment</h2>
 

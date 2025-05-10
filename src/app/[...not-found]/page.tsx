@@ -31,16 +31,8 @@ export default function NotFound() {
 						className="text-8xl font-bold relative z-10"
 						animate={{
 							color: isDark
-								? [
-										"hsl(var(--primary))",
-										"hsl(var(--accent))",
-										"hsl(var(--primary))",
-								  ]
-								: [
-										"hsl(var(--primary))",
-										"hsl(var(--accent-foreground))",
-										"hsl(var(--primary))",
-								  ],
+								? ["hsl(var(--primary))", "hsl(var(--accent))", "hsl(var(--primary))"]
+								: ["hsl(var(--primary))", "hsl(var(--accent-foreground))", "hsl(var(--primary))"],
 						}}
 						transition={{
 							duration: 8,
@@ -66,8 +58,7 @@ export default function NotFound() {
 					animate={{ opacity: 1 }}
 					transition={{ delay: 0.7, duration: 0.5 }}
 				>
-					The page you are looking for does not exist or has been moved to
-					another location.
+					The page you are looking for does not exist or has been moved to another location.
 				</motion.p>
 
 				<motion.div

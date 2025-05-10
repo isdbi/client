@@ -4,13 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 
-import {
-	ChartIcon,
-	ContractItem,
-	TabButton,
-	StatCard,
-	WorkloadChart,
-} from "@/components/shared/common-components";
+import { ChartIcon, ContractItem, TabButton, StatCard, WorkloadChart } from "@/components/shared/common-components";
 
 export default function SukukOverviewPage() {
 	const [activeTab, setActiveTab] = useState("overview");
@@ -18,36 +12,21 @@ export default function SukukOverviewPage() {
 	return (
 		<div className="flex flex-col">
 			{/* Tabs */}
-			<div className="bg-card px-4 sm:px-8 border-b border-border">
+			<div className="px-4 sm:px-8">
 				<div className="flex overflow-x-auto">
-					<TabButton
-						active={activeTab === "overview"}
-						onClick={() => setActiveTab("overview")}
-					>
+					<TabButton active={activeTab === "overview"} onClick={() => setActiveTab("overview")}>
 						Overview
 					</TabButton>
-					<TabButton
-						active={activeTab === "mytasks"}
-						onClick={() => setActiveTab("mytasks")}
-					>
+					<TabButton active={activeTab === "mytasks"} onClick={() => setActiveTab("mytasks")}>
 						MyTasks
 					</TabButton>
-					<TabButton
-						active={activeTab === "analytics"}
-						onClick={() => setActiveTab("analytics")}
-					>
+					<TabButton active={activeTab === "analytics"} onClick={() => setActiveTab("analytics")}>
 						Analytics
 					</TabButton>
-					<TabButton
-						active={activeTab === "issuances"}
-						onClick={() => setActiveTab("issuances")}
-					>
+					<TabButton active={activeTab === "issuances"} onClick={() => setActiveTab("issuances")}>
 						Issuances
 					</TabButton>
-					<TabButton
-						active={activeTab === "investors"}
-						onClick={() => setActiveTab("investors")}
-					>
+					<TabButton active={activeTab === "investors"} onClick={() => setActiveTab("investors")}>
 						Investors
 					</TabButton>
 				</div>
@@ -69,52 +48,36 @@ export default function SukukOverviewPage() {
 									initial={{ opacity: 0, y: 10 }}
 									animate={{ opacity: 1, y: 0 }}
 									transition={{ delay: 0.1 }}
-									className="bg-card rounded-xl shadow-sm p-4 sm:p-6"
+									className="bg-card rounded-xl border p-4 sm:p-6"
 								>
-									<StatCard
-										title="Active Issuances"
-										value="9"
-										icon={<ChartIcon />}
-									/>
+									<StatCard title="Active Issuances" value="9" icon={<ChartIcon />} />
 								</motion.div>
 
 								<motion.div
 									initial={{ opacity: 0, y: 10 }}
 									animate={{ opacity: 1, y: 0 }}
 									transition={{ delay: 0.2 }}
-									className="bg-card rounded-xl shadow-sm p-4 sm:p-6"
+									className="bg-card rounded-xl border p-4 sm:p-6"
 								>
-									<StatCard
-										title="Total Value"
-										value="$450M"
-										icon={<ChartIcon />}
-									/>
+									<StatCard title="Total Value" value="$450M" icon={<ChartIcon />} />
 								</motion.div>
 
 								<motion.div
 									initial={{ opacity: 0, y: 10 }}
 									animate={{ opacity: 1, y: 0 }}
 									transition={{ delay: 0.3 }}
-									className="bg-card rounded-xl shadow-sm p-4 sm:p-6"
+									className="bg-card rounded-xl border p-4 sm:p-6"
 								>
-									<StatCard
-										title="Upcoming Maturities"
-										value="2"
-										icon={<ChartIcon />}
-									/>
+									<StatCard title="Upcoming Maturities" value="2" icon={<ChartIcon />} />
 								</motion.div>
 
 								<motion.div
 									initial={{ opacity: 0, y: 10 }}
 									animate={{ opacity: 1, y: 0 }}
 									transition={{ delay: 0.4 }}
-									className="bg-card rounded-xl shadow-sm p-4 sm:p-6"
+									className="bg-card rounded-xl border p-4 sm:p-6"
 								>
-									<StatCard
-										title="Investor Count"
-										value="124"
-										icon={<ChartIcon />}
-									/>
+									<StatCard title="Investor Count" value="124" icon={<ChartIcon />} />
 								</motion.div>
 							</div>
 
@@ -125,14 +88,12 @@ export default function SukukOverviewPage() {
 									initial={{ opacity: 0, y: 10 }}
 									animate={{ opacity: 1, y: 0 }}
 									transition={{ delay: 0.5 }}
-									className="lg:col-span-2 bg-card rounded-xl shadow-sm p-4 sm:p-6"
+									className="lg:col-span-2 bg-card rounded-xl border p-4 sm:p-6"
 								>
 									<h2 className="text-xl sm:text-2xl font-bold text-foreground mb-1">
 										Sukuk Type Distribution
 									</h2>
-									<p className="text-muted-foreground text-sm mb-6">
-										By issuance value
-									</p>
+									<p className="text-muted-foreground text-sm mb-6">By issuance value</p>
 
 									<div className="h-64 relative">
 										<WorkloadChart />
@@ -172,14 +133,12 @@ export default function SukukOverviewPage() {
 									initial={{ opacity: 0, y: 10 }}
 									animate={{ opacity: 1, y: 0 }}
 									transition={{ delay: 0.6 }}
-									className="bg-card rounded-xl shadow-sm p-4 sm:p-6"
+									className="bg-card rounded-xl border p-4 sm:p-6"
 								>
 									<h2 className="text-xl sm:text-2xl font-bold text-foreground mb-1">
 										Recent Issuances
 									</h2>
-									<p className="text-muted-foreground text-sm mb-6">
-										Latest sukuk issuances
-									</p>
+									<p className="text-muted-foreground text-sm mb-6">Latest sukuk issuances</p>
 
 									<div className="space-y-4">
 										{[1, 2, 3, 4, 5].map((item) => (
@@ -217,9 +176,7 @@ export default function SukukOverviewPage() {
 										: "Investors"}{" "}
 									View
 								</h2>
-								<p className="text-muted-foreground">
-									This tab content is not implemented in the demo
-								</p>
+								<p className="text-muted-foreground">This tab content is not implemented in the demo</p>
 							</div>
 						</motion.div>
 					)}

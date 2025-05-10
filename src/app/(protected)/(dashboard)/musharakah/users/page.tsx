@@ -16,10 +16,7 @@ export default function MurabahaUsersPage() {
 							placeholder="Search users..."
 							className="w-full pl-10 pr-4 py-2 border border-border rounded-lg bg-background focus:outline-none focus:ring-2 focus:ring-amber-200"
 						/>
-						<Search
-							className="absolute left-3 top-2.5 text-muted-foreground"
-							size={18}
-						/>
+						<Search className="absolute left-3 top-2.5 text-muted-foreground" size={18} />
 					</div>
 
 					<button className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg hover:bg-muted transition-colors">
@@ -39,21 +36,11 @@ export default function MurabahaUsersPage() {
 					<table className="w-full">
 						<thead>
 							<tr className="border-b border-border">
-								<th className="text-left p-4 font-medium text-muted-foreground">
-									Name
-								</th>
-								<th className="text-left p-4 font-medium text-muted-foreground">
-									Role
-								</th>
-								<th className="text-left p-4 font-medium text-muted-foreground">
-									Email
-								</th>
-								<th className="text-left p-4 font-medium text-muted-foreground">
-									Status
-								</th>
-								<th className="text-left p-4 font-medium text-muted-foreground">
-									Last Active
-								</th>
+								<th className="text-left p-4 font-medium text-muted-foreground">Name</th>
+								<th className="text-left p-4 font-medium text-muted-foreground">Role</th>
+								<th className="text-left p-4 font-medium text-muted-foreground">Email</th>
+								<th className="text-left p-4 font-medium text-muted-foreground">Status</th>
+								<th className="text-left p-4 font-medium text-muted-foreground">Last Active</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -117,16 +104,14 @@ export default function MurabahaUsersPage() {
 												user.status === "Active"
 													? "bg-green-100 text-green-700 dark:bg-green-900/20"
 													: user.status === "Away"
-													? "bg-amber-100 text-amber-700 dark:bg-amber-900/20"
-													: "bg-gray-100 text-gray-700 dark:bg-gray-800"
+														? "bg-amber-100 text-amber-700 dark:bg-amber-900/20"
+														: "bg-gray-100 text-gray-700 dark:bg-gray-800"
 											}`}
 										>
 											{user.status}
 										</span>
 									</td>
-									<td className="p-4 text-muted-foreground">
-										{user.lastActive}
-									</td>
+									<td className="p-4 text-muted-foreground">{user.lastActive}</td>
 								</motion.tr>
 							))}
 						</tbody>
