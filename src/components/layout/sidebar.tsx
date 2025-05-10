@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { LayoutGrid, FileText, Package, Users, Settings, User, Ruler } from "lucide-react";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
+import Image from "next/image";
+import logo from "../../../public/logo.svg";
 
 interface SidebarProps {
 	pathname: string;
@@ -38,9 +40,9 @@ export function Sidebar({ pathname, pathnameRoot, productType }: SidebarProps) {
 				<div className="mt-auto mb-4">
 					<ThemeToggle />
 				</div>
-				<div className="mt-2">
+				{/* <div className="mt-2">
 					<SidebarLink href="/profile" icon={<User size={24} />} active={pathname === "/profile"} />
-				</div>
+				</div> */}
 			</div>
 		</div>
 	);
@@ -49,10 +51,7 @@ export function Sidebar({ pathname, pathnameRoot, productType }: SidebarProps) {
 function SidebarLogo() {
 	return (
 		<div className="w-12 h-12 bg-amber-50 dark:bg-amber-900/20 rounded-full flex items-center justify-center">
-			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path d="M12 3L18 9L12 15L6 9L12 3Z" fill="#F59E0B" />
-				<path d="M9 9L12 6L15 9L12 12L9 9Z" fill="white" />
-			</svg>
+			<Image src={logo} alt="logo" />
 		</div>
 	);
 }

@@ -17,18 +17,18 @@ export default function SukukOverviewPage() {
 					<TabButton active={activeTab === "overview"} onClick={() => setActiveTab("overview")}>
 						Overview
 					</TabButton>
-					<TabButton active={activeTab === "mytasks"} onClick={() => setActiveTab("mytasks")}>
+					{/* <TabButton active={activeTab === "mytasks"} onClick={() => setActiveTab("mytasks")}>
 						MyTasks
-					</TabButton>
+					</TabButton> */}
 					<TabButton active={activeTab === "analytics"} onClick={() => setActiveTab("analytics")}>
 						Analytics
 					</TabButton>
 					<TabButton active={activeTab === "issuances"} onClick={() => setActiveTab("issuances")}>
 						Issuances
 					</TabButton>
-					<TabButton active={activeTab === "investors"} onClick={() => setActiveTab("investors")}>
+					{/* <TabButton active={activeTab === "investors"} onClick={() => setActiveTab("investors")}>
 						Investors
-					</TabButton>
+					</TabButton> */}
 				</div>
 			</div>
 

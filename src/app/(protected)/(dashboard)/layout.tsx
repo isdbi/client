@@ -89,16 +89,8 @@ export default function DashboardLayout({
 							</span>
 						)}
 					</div>
-					<div className="flex items-center gap-3">
-						<div className="hidden sm:flex">
-							<StatusIndicator type="success" />
-							<StatusIndicator type="warning" />
-							<StatusIndicator type="error" />
-							<div className="w-px h-6 bg-border mx-2"></div>
-						</div>
-						<div className="hidden md:block">
-							<ThemeToggle />
-						</div>
+					<div className="flex items-center gap-3 pr-5">
+						{/* <ThemeToggle /> */}
 						<SignedIn>
 							<UserButton />
 						</SignedIn>
