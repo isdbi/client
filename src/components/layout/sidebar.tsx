@@ -19,7 +19,13 @@ export function Sidebar({ pathname, pathnameRoot, productType }: SidebarProps) {
 					<SidebarLink
 						href={`/${pathnameRoot}`}
 						icon={<LayoutGrid size={24} />}
-						active={pathname === `/${productType}`}
+						active={
+							!(
+								pathname.includes("/compliance-review") ||
+								pathname.includes("/contracts") ||
+								pathname.includes("/settings")
+							)
+						}
 					/>
 					<SidebarLink
 						href={`/${pathnameRoot}/compliance-review`}
@@ -50,9 +56,12 @@ export function Sidebar({ pathname, pathnameRoot, productType }: SidebarProps) {
 
 function SidebarLogo() {
 	return (
-		<div className="w-12 h-12 bg-amber-50 dark:bg-amber-900/20 rounded-full flex items-center justify-center">
+		<Link
+			href={"/"}
+			className="w-12 h-12 bg-amber-50 dark:bg-amber-900/20 rounded-full flex items-center justify-center"
+		>
 			<Image src={logo} alt="logo" />
-		</div>
+		</Link>
 	);
 }
 
